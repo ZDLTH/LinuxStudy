@@ -9,7 +9,7 @@ int main()
 {
 	saveFIle();
 	char* i;
-	i = readFile("test.txt",3);
+	i = readFile("test.txt",5);
 	printf("item is %s\n", i);
 	return 0;
 }
