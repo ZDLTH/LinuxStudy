@@ -10,14 +10,19 @@ int main()
 	saveFIle();
 	char* i;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	i = readFile("test.txt",5);
 =======
 	i = readFile("test.txt", 2);
+>>>>>>> t
+=======
+	i = readFile("test.txt",3);
 >>>>>>> t
 	printf("item is %s\n", i);
 	return 0;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 char* readFile(char* filename, int index)
 {
@@ -31,6 +36,13 @@ char* readFile(char *filename, int index)
 
 	if ((f = fopen(filename, "rb")) == NULL) 
 >>>>>>> t
+=======
+char* readFile(char* filename, int index)
+{
+	FILE* f;
+
+	if ((f = fopen(filename, "rb")) == NULL)
+>>>>>>> t
 	{
 		printf("open err");
 		exit(0);
@@ -38,9 +50,13 @@ char* readFile(char *filename, int index)
 
 	int length = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	fread(&length, sizeof(int), 1, f);
 =======
 	fread(&length, sizeof(int),1, f);
+>>>>>>> t
+=======
+	fread(&length, sizeof(int), 1, f);
 >>>>>>> t
 
 	if (index > length)
@@ -60,6 +76,7 @@ char* readFile(char *filename, int index)
 		itemSize = i == index - 1 ? size : 0;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	fseek(f, (length + 1) * sizeof(int) + place - itemSize, SEEK_SET);
 
@@ -68,6 +85,12 @@ char* readFile(char *filename, int index)
 	fseek(f, (length+1)*sizeof(int), SEEK_SET);
 
 	char *item;
+>>>>>>> t
+=======
+
+	fseek(f, (length + 1) * sizeof(int) + place - itemSize, SEEK_SET);
+
+	char* item;
 >>>>>>> t
 	item = malloc(itemSize);
 	memset(item, 0, itemSize);
@@ -84,9 +107,13 @@ void saveFIle()
 {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	FILE* f = fopen("test.txt", "w+");
 =======
 	FILE* f = fopen("test.txt", "w");
+>>>>>>> t
+=======
+	FILE* f = fopen("test.txt", "w+");
 >>>>>>> t
 	fseek(f, 0, SEEK_END);
 	int a = 5;
