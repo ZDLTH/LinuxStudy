@@ -9,23 +9,39 @@ int main()
 {
 	saveFIle();
 	char* i;
+<<<<<<< HEAD
 	i = readFile("test.txt",5);
+=======
+	i = readFile("test.txt", 2);
+>>>>>>> t
 	printf("item is %s\n", i);
 	return 0;
 }
 
+<<<<<<< HEAD
 char* readFile(char* filename, int index)
 {
 	FILE* f;
 
 	if ((f = fopen(filename, "rb")) == NULL)
+=======
+char* readFile(char *filename, int index)
+{
+	FILE* f;
+
+	if ((f = fopen(filename, "rb")) == NULL) 
+>>>>>>> t
 	{
 		printf("open err");
 		exit(0);
 	}
 
 	int length = 0;
+<<<<<<< HEAD
 	fread(&length, sizeof(int), 1, f);
+=======
+	fread(&length, sizeof(int),1, f);
+>>>>>>> t
 
 	if (index > length)
 	{
@@ -43,10 +59,16 @@ char* readFile(char* filename, int index)
 		place += size;
 		itemSize = i == index - 1 ? size : 0;
 	}
+<<<<<<< HEAD
 
 	fseek(f, (length + 1) * sizeof(int) + place - itemSize, SEEK_SET);
 
 	char* item;
+=======
+	fseek(f, (length+1)*sizeof(int), SEEK_SET);
+
+	char *item;
+>>>>>>> t
 	item = malloc(itemSize);
 	memset(item, 0, itemSize);
 
@@ -61,7 +83,11 @@ char* readFile(char* filename, int index)
 void saveFIle()
 {
 
+<<<<<<< HEAD
 	FILE* f = fopen("test.txt", "w+");
+=======
+	FILE* f = fopen("test.txt", "w");
+>>>>>>> t
 	fseek(f, 0, SEEK_END);
 	int a = 5;
 
