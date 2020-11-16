@@ -1,0 +1,24 @@
+#include "../ch8.h"
+extern void dynamic_lib_fun_call(void);
+
+int main(void)
+{
+	dynamic_lib_fun_call();
+}
+
+
+void mysort(int *a, int l)
+{
+	 for (int i = 0; i < l; i++)
+        {
+      	for (int j = 0; j < l - i; j++) 
+        	{
+            	if (a[j] > a[j + 1])
+            		{
+               	 int tmp = a[j + 1];
+                	a[j + 1] = a[j];
+                	a[j] = tmp;
+           		 }
+       		}
+	}
+}
